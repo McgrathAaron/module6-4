@@ -9,8 +9,7 @@ import sm from "./slicemachine.config.json";
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName =
-  process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || sm.repositoryName;
+export const repositoryName = process.env.PRISMIC_REPOSITORY_NAME || sm.repositoryName;
 
 /**
  * A list of Route Resolver objects that define how a document's `url` field is resolved.
