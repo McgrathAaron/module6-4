@@ -16,32 +16,11 @@ export default async function HomePage() {
     return []
   })
 
-  // Extract available types
-  const availableTypes = [...new Set(allDocuments.map((doc) => doc.type))]
-
   // Try to get articles if they exist
   const articles = allDocuments.filter((doc) => doc.type === "article")
 
   return (
     <div className="container py-12">
-      {/* Connection Status */}
-      <div className="mb-12 p-6 bg-gray-50 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Prismic Connection Status</h2>
-        {allDocuments.length > 0 ? (
-          <div>
-            <p className="text-green-600 font-medium mb-2">✅ Successfully connected to Prismic!</p>
-            <p>
-              Found {allDocuments.length} documents of types: {availableTypes.join(", ")}
-            </p>
-          </div>
-        ) : (
-          <div>
-            <p className="text-amber-600 font-medium mb-2">⚠️ No documents found in Prismic.</p>
-            <p>You need to create content in your Prismic repository.</p>
-          </div>
-        )}
-      </div>
-
       {/* Hero Section */}
       <section className="py-12 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -113,20 +92,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-
-      {/* Next Steps */}
-      <section className="py-12 bg-gray-50 rounded-lg my-12">
-        <div className="container text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Next Steps</h2>
-          <p className="text-gray-600 mb-8">Follow these steps to complete your EcoBytes blog setup:</p>
-          <ol className="text-left list-decimal pl-8 space-y-4">
-            <li>Create custom types in Prismic (Article, Homepage, About)</li>
-            <li>Add content to your Prismic repository</li>
-            <li>Customize the components and pages to match your design</li>
-            <li>Deploy your blog to Vercel or another hosting platform</li>
-          </ol>
-        </div>
-      </section>
     </div>
   )
 }

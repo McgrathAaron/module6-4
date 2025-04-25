@@ -16,12 +16,14 @@ export default async function AboutPage() {
   return (
     <div className="container py-12">
       <div className="max-w-3xl mx-auto">
+        {/* About Title */}
         <h1 className="text-4xl font-bold mb-8">{about?.data?.title || "About EcoBytes"}</h1>
 
+        {/* Featured Image */}
         {about?.data?.featured_image?.url ? (
           <div className="relative aspect-video overflow-hidden rounded-lg mb-8">
             <Image
-              src={about.data.featured_image.url || "/placeholder.svg"}
+              src={about.data.featured_image.url}
               alt={about.data.title || "About EcoBytes"}
               fill
               className="object-cover"
@@ -33,23 +35,20 @@ export default async function AboutPage() {
           </div>
         )}
 
-        {about?.data?.content ? (
-          <PrismicContent field={about.data.content} />
-        ) : (
-          <div className="prose prose-green max-w-none">
+        {/* About Content */}
+        <div className="prose prose-green max-w-none mb-12">
+          {about?.data?.content ? (
+            <PrismicContent field={about.data.content} />
+          ) : (
             <p>
               Welcome to EcoBytes, your source for information on sustainable technology and eco-friendly digital
               solutions. Our mission is to explore and promote technologies that help create a more sustainable future.
             </p>
-            <p className="text-amber-600 mt-4 p-4 bg-amber-50 rounded-lg">
-              This is placeholder content. Create an "About" custom type in your Prismic repository to replace this
-              content with your own.
-            </p>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Team Section */}
-        {about?.data?.team_members && about.data.team_members.length > 0 ? (
+        {about?.data?.team_members?.length > 0 && (
           <section className="mt-16">
             <h2 className="text-2xl font-bold mb-8">Our Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -61,7 +60,7 @@ export default async function AboutPage() {
                         src={member.photo.url || "/placeholder.svg"}
                         fill
                         className="object-cover"
-                        alt={member.name || ""}
+                        alt={member.name || "Team Member"}
                       />
                     ) : (
                       <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -75,7 +74,7 @@ export default async function AboutPage() {
               ))}
             </div>
           </section>
-        ) : null}
+        )}
 
         {/* Contact Section */}
         <section className="mt-16 p-8 bg-gray-50 rounded-lg">
@@ -92,17 +91,11 @@ export default async function AboutPage() {
             </p>
             <p>
               <strong>Follow us:</strong>{" "}
-              <a href="#" className="text-green-600 hover:underline">
-                Twitter
-              </a>
+              <a href="#" className="text-green-600 hover:underline">Twitter</a>
               {", "}
-              <a href="#" className="text-green-600 hover:underline">
-                LinkedIn
-              </a>
+              <a href="#" className="text-green-600 hover:underline">LinkedIn</a>
               {", "}
-              <a href="#" className="text-green-600 hover:underline">
-                Instagram
-              </a>
+              <a href="#" className="text-green-600 hover:underline">Instagram</a>
             </p>
           </div>
         </section>
