@@ -1,0 +1,58 @@
+{
+  "id": "article",
+  "label": "Article",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "title": {
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "summary": {
+        "config": {
+          "label": "Summary",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "featured_image": {
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "publication_date": {
+        "config": {
+          "label": "Publication Date",
+          "placeholder": ""
+        },
+        "type": "Date"
+      },
+      "content": {
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      }
+    }
+  }
+}

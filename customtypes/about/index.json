@@ -1,0 +1,74 @@
+{
+  "id": "about",
+  "label": "About",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "featured_image": {
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "content": {
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "team_members": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "name": {
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              },
+              "type": "Text"
+            },
+            "role": {
+              "config": {
+                "label": "Role",
+                "placeholder": ""
+              },
+              "type": "Text"
+            },
+            "photo": {
+              "config": {
+                "label": "Photo",
+                "constraint": {},
+                "thumbnails": []
+              },
+              "type": "Image"
+            },
+            "bio": {
+              "config": {
+                "label": "Bio",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph"
+              },
+              "type": "StructuredText"
+            }
+          },
+          "label": "Team Members"
+        }
+      }
+    }
+  }
+}
